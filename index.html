@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background video */
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            z-index: -1;
+        }
+
+        /* Intro Screen */
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            animation: fadeOut 2s ease forwards;
+            animation-delay: 3s;
+        }
+
+        .intro h1 {
+            color: white;
+            font-size: 80px;
+            letter-spacing: 10px;
+            animation: introAnim 3s ease;
+        }
+
+        @keyframes introAnim {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .header {
+            background-color: rgba(154, 14, 159, 0.9);
+            text-align: center;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        /* Welcome text animation */
+        .header h1 {
+            font-weight: bold;
+            color: black;
+            opacity: 0;
+            animation: textFade 3s ease forwards;
+            animation-delay: 4s;
+        }
+
+        .header h2 {
+            color: black;
+            opacity: 0;
+            animation: textFade 3s ease forwards;
+            animation-delay: 5s;
+        }
+
+        @keyframes textFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button {
+            margin-left: 43%;
+            font-size: 40px;
+            margin-top: 190px;
+            border: 5px solid green;
+            cursor: pointer;
+            background-color: white;
+            transition: transform 0.6s ease, background-color 0.6s ease;
+        }
+
+        button a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Slow hover animation */
+        button:hover {
+            transform: scale(1.1);
+            background-color: rgb(183, 64, 203);
+        }
+        /* -------- Responsive Scaling for All Screens -------- */
+
+/* Base container scaling */
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile phones (portrait) */
+@media (max-width: 600px) {
+    body {
+        transform: scale(0.6);
+        transform-origin: top left;
+        width: 166.67%;
+        height: 166.67%;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        transform: scale(0.8);
+        transform-origin: top left;
+        width: 125%;
+        height: 125%;
+    }
+}
+
+/* Small laptops */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    body {
+        transform: scale(0.9);
+        transform-origin: top left;
+        width: 111.11%;
+        height: 111.11%;
+    }
+}
+
+/* Large desktops */
+@media (min-width: 1367px) {
+    body {
+        transform: scale(1);
+        transform-origin: top left;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Intro Screen -->
+    <div class="intro">
+        <h1>PRD</h1>
+    </div>
+
+    <audio autoplay>
+        <source src="tum se hi.mpeg">
+    </audio>
+
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop >
+        <source src="Tum Se Hi - Jab We Met-(HDvideo9).mp4" type="video/mp4">
+    </video>
+
+    <div class="header">
+        <h1>Welcome to my Platform</h1>
+        <h2>Download any song with ease</h2>
+    </div>
+
+    <button>
+        <a href="https://mp3.pm/" target="_blank">Click me</a>
+    </button>
+
+</body>
+</html>
